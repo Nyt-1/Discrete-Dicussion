@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amsthm,amssymb,amsfonts,setspace}
+
+\textwidth 7.0 truein
+\oddsidemargin -0.25in   %left-hand edge
+\evensidemargin -0.5 truein  %right-hand edge
+\topmargin -0.85in      %top of paper to top of head, pulls whole unit
+\textheight 9.5in
+
+%%%% In most cases you won't need to edit anything above this line %%%%
+
+\begin{document}
+
+\hfill CMSC 27100
+
+\hfill Week \#2
+
+
+\section*{Cartesian Products}
+\begin{itemize}
+    \item[1)] When is $(A \times B) \cup (C \times D) = (A\cup C) \times (B \cup D)$ true?
+    \item[2)] Define $F: P(B) \rightarrow P(A\times B) \text{ to be } F(B_s) = A \times B_s $. Prove F is injective if $A \neq 0$.
+
+    Why does it matter that $A \neq 0$?
+\end{itemize}
+
+\section*{Set Theory} 
+Operators: $\cap, \cup, \setminus, \overline{A}$, 
+
+\begin{itemize}
+    \item[1)] Let $U$ be a universe set. All complements are taken with respect to $U$. Prove if true, give counterexample if false:
+        \begin{itemize}
+            \item[a)] $(A\setminus B) \cup (B \setminus A) = (A \cup B) \setminus (A \cap B)$
+            \item[b)] $A\subseteq B \Rightarrow \overline{B}\subseteq \overline{A}$
+            \item[c)] $\overline{A\cup B}=\overline{A}\cap \overline{B}$
+            \item[d)] $\overline{A\cap B}=\overline{A}\cup \overline{B}$
+        \end{itemize}
+        \item[2)] Suppose $|U|=n$ and $|A|=k$. Compute $|\mathcal{P}(A)|$ and $|\mathcal{P}(U\setminus A)|$. Determine for which $n,k$ it is possible that $\mathcal{P}(A)=\mathcal{P}(U\setminus A)$.
+\end{itemize}
+
+\section*{Functions}
+\begin{itemize}
+    \item[1)] Let $A=\{1,2,3,4\}$ and $B=\{1,2,3\}$.
+      \begin{itemize}
+      \item[a)] Show that no function $f:A\to B$ can be injective.
+      \item[b)] Show that a surjective function $f:A\to B$ can exist, and give one explicit example.
+      \end{itemize}
+    \item[2)]Let $f:A\to B$. Prove from the definition that if $f$ is injective and $A$ is finite, then $|A|\le |B|$.
+    \item[3)] Let $A,B$ be finite with $|A|=|B|=n$. Prove: $f:A\to B$ is injective iff $f$ is surjective.
+\end{itemize}
+
+\section*{Number Theory}
+Divisbility, GCD, The Division Theorem \\
+$\mathrm{Div}(n)=\{a: a\mid n\}$
+\begin{itemize}
+    \item[1)] Let $\gcd(m,n)$ be defined as the largest element of $\mathrm{Div}(m)\cap\mathrm{Div}(n)$.
+  \begin{enumerate}
+  \item Prove directly from the definition that $\gcd(m,n)\mid m$ and $\gcd(m,n)\mid n$.
+  \item Prove: if $d\mid m$ and $d\mid n$, then $d\mid \gcd(m,n)$.
+  \end{enumerate}
+
+  \item[2)] Prove: $a\mid b \Rightarrow \mathrm{Div}(a)\subseteq \mathrm{Div}(b)$.
+\end{itemize}
+
+\end{document}
