@@ -41,6 +41,10 @@
     {
     \qed
     }
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength {\marginparwidth }{2cm}
 
@@ -50,8 +54,8 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
-\newcommand{\Z}{\mathbff{Z}}
-\newcommand{\st}{\text{s.t}}
+\newcommand{\Z}{\mathbf{Z}}
+\newcommand{\st}{\text{ s.t }}
 \newcommand{\bigO}[1]{\mathcal{O}\left(#1\right)}
 \newcommand{\fP}{\mathbb{P}}
 \newcommand{\E}{\mathbb{E}}
@@ -83,9 +87,52 @@
 %%%% In most cases you won't need to edit anything above this line %%%%
 
 \begin{document}
-
 \hfill CMSC 27100
 
 \hfill Week \#3
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Division Theorem}
+\begin{theorem}[Division Algorithm]
+For every integer $n$ and every integer $d>0$, there exist unique integers $q$ and $r$ such that
+\[
+n = dq + r \quad \text{and} \quad 0 \le r < d.
+\]
+\end{theorem}
+\begin{proof} 
+
+    \textbf{Existance} \\
+    Consider the set $A = \{n-dq |q \in \Z\}$. Since $d \neq 0$, $A$ must have a non-negative number. By ordering, we know there must exist a smallest non-negative number, We call this $r$. $r < d$ becuase otherwise, $r = n - dq = d + m$ and so $m = n - d(q+1)$ so $m \in A,~ m < r$, a contradiction. 
+
+    \textbf{Uniqueness}
+    \begin{align*}
+        n &= dq_1 + r_1 = dq_2 + r_2 \\
+        0 &= d(q_1 - q_2) + (r_1 - r_2) \\
+        r_2 - r_1 &= d(q_1 - q_2) \\
+    \end{align*}
+
+    $d | r_2 - r_1, ~ 0 \leq r_2 < d ~\Rightarrow~r_2 - r_1 = 0 ~\Rightarrow ~r_2 = r_1 ~\Rightarrow ~q_2 = q_1$
+\end{proof}
+
+\begin{enumerate}
+    \item 
+\end{enumerate}
+
+\section*{Euclid's Algorithm}
+If $d=gcd(a,b), b\neq 0 \text{ and } r = a \mod b, \text{ then } d = gcd(b,r)$
+
+\begin{enumerate}
+    \item Compute $gcd(105, 252)$
+    \item Prove $gcd(a,b) = gcd(a, b - ka)$ for any integer $k$. Use this fact to compute $gcd(98765, 43210)$
+    \item 
+\end{enumerate}
+
+\section*{Modular Arthemtic}
+\begin{enumerate}
+    \item Compute $7^{2222} \pmod{1000}$
+    \item Find $x \st 35x = 10 \pmod{50}$
+\end{enumerate}
+
+
 
 \end{document}
