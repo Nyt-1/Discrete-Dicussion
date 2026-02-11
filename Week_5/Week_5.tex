@@ -1,0 +1,168 @@
+\documentclass[12pt]{article}
+ \usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts, enumitem, fancyhdr, color, comment, graphicx, environ}
+\usepackage{booktabs}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{mathdots}
+\usetikzlibrary{arrows.meta, automata, positioning}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{gray!10},
+  frame=single,
+  breaklines=true,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray},
+  stringstyle=\color{red},
+  showstringspaces=false,
+  numbers=left,            
+  numberstyle=\tiny\color{gray}, 
+  numbersep=10pt 
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\setlength{\headheight}{65pt}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{sol}
+    {\emph{Solution:}
+    }
+    {
+    \qed
+    }
+\specialcomment{com}{ \color{blue} \textbf{Comment:} }{\color{black}} %for instructor comments while grading
+\NewEnviron{probscore}{\marginpar{ \color{blue} \tiny Problem Score: \BODY \color{black} }}
+
+\newcounter{subproblem}
+% \renewcommand{\thesubproblem}{\alph{subproblem}} % letters 
+\renewcommand{\thesubproblem}{\arabic{subproblem}} % numbers
+\newenvironment{subprob}[1][]{
+  \refstepcounter{subproblem}
+  \begin{trivlist}
+  \item[\hskip \labelsep {\bfseries (\thesubproblem)}]
+}{
+  \end{trivlist}
+}
+\newenvironment{subsol}
+    {\emph{Solution:}
+    }
+    {
+    \qed
+    }
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+% numbered within sections (optional)
+% \newtheorem{theorem}{Theorem}[section]
+% \newtheorem{lemma}[theorem]{Lemma} % shares theorem counter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength {\marginparwidth }{2cm}
+\newcommand{\nextline}{\\[0.2em]}
+
+
+\newtheorem*{remark}{Remark}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\st}{\text{ s.t }}
+\newcommand{\tand}{\text{ and }}
+\newcommand{\tor}{\text{ or }}
+\newcommand{\bigO}[1]{\mathcal{O}\left(#1\right)}
+\newcommand{\fP}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+
+%%%% In most cases you won't need to edit anything above this line %%%%
+
+\begin{document}
+
+\hfill CMSC 27100 Practice Problems
+
+\hfill Mideterm Review
+
+\section*{Logic}
+\begin{enumerate}
+  \item Determine if the statement is true or false. If false, give a counterexample. 
+  \[\forall a,b \in \R, ~a|b \rightarrow a^2|b^2\]
+
+  \item Prove or Disprove: If $p\rightarrow q$ and $q \rightarrow r$, then $(p \vee q) \rightarrow r$
+\end{enumerate}
+
+
+\section*{Cartesian Products}
+\begin{enumerate}
+  \item If $|A| = n \tand |B| = m$, prove $|A \times B| = nm$
+  \item How many subsets of $|A \times B|$ exist? Assume $|A| = n, |B| = m, \tand |A \cap B| = 0$.
+\end{enumerate}
+
+\section*{Set Theory}
+\begin{enumerate}
+  \item Prove that $(A \setminus B) \cap B = \emptyset$
+  \item Assume $|A| = 10, |B| = 30, \tand |A \cap B| = 10$. What can we infer about $A \tand B$?
+\end{enumerate}
+
+\section*{Functions}
+\begin{enumerate}
+  \item If $G: A \rightarrow B$ and $F: B \rightarrow C$, prove $F \circ G: A \rightarrow C$ is injective.
+  \item If $F: A \rightarrow B$ is bijective, prove that $F^{-1}$ exists and is bijective.
+\end{enumerate}
+
+\section*{Number Theory}
+\begin{enumerate}
+  \item Prove that $101$ is prime.
+  \item Prove that if $\gcd(a, b) = 1$, then $a|bc \rightarrow a|c$
+\end{enumerate}
+
+\section*{Division Theorem}
+\begin{enumerate}
+  \item Write $-57$ in the form: $8q + r$ with $0 \leq r < 8$
+  \item Prove uniqueness of the division theorem. (Existance was previously proven in class)
+\end{enumerate}
+
+\section*{Euclid's Algorithm}
+\begin{enumerate}
+  \item Find integers $x, y$ s.t. $414x + 662y = \gcd(414,662)$
+  \item Find multiplicative inverse of $37 \pmod{101}$
+\end{enumerate}
+
+\section*{Modular Arthemtic and Fermat's Little Theorem}
+\begin{enumerate}
+  \item Determine if $18$ has an inverse modulo $30$
+  \item Compute $7^{100} \pmod{13}$
+  \item Prove that if $p$ is prime and $p \nmid a$, then $a^{p-2} = a^{-1} \pmod{p}$
+\end{enumerate}
+
+\section*{Equivalence Classes and CRT}
+\begin{enumerate}
+  \item How many equivalence classes are there under mod $n$ on $\Z$?
+  \item Find integer $x$ s.t. $x \equiv 1 \pmod{4} \tand x \equiv 3 \pmod{6}$. Solve or explain why it is impossible.
+
+\end{enumerate}
+
+\section*{Induction}
+\begin{enumerate}
+  \item Prove that any integer $n \geq 8$ can be made of a combonation of units of $5$ and $3$.
+  \item We define the fibonacci sequence s.t. $n_1 = 0, n_2 = 1 \tand \forall n > 2, a_n = a_{n-1} + a_{n-2}$. Prove that $a_n < 2^n ~\forall n \geq 1$.
+\end{enumerate}
+
+\section*{Wilson's Theorem}
+\begin{enumerate}
+  \item Prove both direction of Wilson's Theorem. In other words, prove that $p$ is prime $\iff (p-1)! \equiv -1 \pmod{p}$
+\end{enumerate}
+
+
+
+\end{document}
