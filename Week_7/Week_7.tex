@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+ \usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts, enumitem, fancyhdr, color, comment, graphicx, environ}
+\usepackage{booktabs}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usepackage{subcaption}
+\usepackage{float}
+\usetikzlibrary{arrows.meta, automata, positioning}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{gray!10},
+  frame=single,
+  breaklines=true,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray},
+  stringstyle=\color{red},
+  showstringspaces=false,
+  numbers=left,            
+  numberstyle=\tiny\color{gray}, 
+  numbersep=10pt 
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\setlength{\headheight}{65pt}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{sol}
+    {\emph{Solution:}
+    }
+    {
+    \qed
+    }
+\specialcomment{com}{ \color{blue} \textbf{Comment:} }{\color{black}} %for instructor comments while grading
+\NewEnviron{probscore}{\marginpar{ \color{blue} \tiny Problem Score: \BODY \color{black} }}
+
+\newcounter{subproblem}
+% \renewcommand{\thesubproblem}{\alph{subproblem}} % letters 
+\renewcommand{\thesubproblem}{\arabic{subproblem}} % numbers
+\newenvironment{subprob}[1][]{
+  \refstepcounter{subproblem}
+  \begin{trivlist}
+  \item[\hskip \labelsep {\bfseries (\thesubproblem)}]
+}{
+  \end{trivlist}
+}
+\newenvironment{subsol}
+    {\emph{Solution:}
+    }
+    {
+    \qed
+    }
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+% numbered within sections (optional)
+% \newtheorem{theorem}{Theorem}[section]
+% \newtheorem{lemma}[theorem]{Lemma} % shares theorem counter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength {\marginparwidth }{2cm}
+\newcommand{\nextline}{\\[0.2em]}
+
+
+\newtheorem*{remark}{Remark}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\st}{\text{ s.t }}
+\newcommand{\tand}{\text{ and }}
+\newcommand{\tor}{\text{ or }}
+\newcommand{\bigO}[1]{\mathcal{O}\left(#1\right)}
+\newcommand{\fP}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+
+%%%% In most cases you won't need to edit anything above this line %%%%
+
+\begin{document}
+
+\hfill CMSC 27100 Practice Problems
+
+\hfill Week \#7
+
+\section*{Counting}
+Combinations, Permutations, Combinations with Replacement
+
+\begin{enumerate}
+  \item[1.] How many distinct ways to form 2 pairs?
+  \item[2.] How many ways to rearrange the letters of the word COFFEE?
+  \item[3.] Given a collection of 12 students. How many different teams of 3 can we make?
+  \item[4.] At a supermarket, Sally wants to buy 12 pieces of fruit. She is able to pick from oranges, pears, and apples. How many different ways is there is buy 12 pieces of fruit?
+\end{enumerate}
+
+\section*{Binomial Theorem}
+Vandermonde, Pascal's Identity.
+
+\begin{enumerate}
+  \item[1.] Calculate using Pascal's Identity:
+  \[
+  \binom{11}{4}
+  \]
+
+  \[
+  \binom{12}{5}
+  \]
+
+  \[
+  \binom{15}{2}
+  \]
+
+  \item[2.] Calculate using Vandermonde's Identity
+  \[
+  \sum_{k=0}^{6}\binom{8}{k}\binom{5}{6-k}
+  \]
+
+  \[
+  \sum_{k=0}^{4}\binom{9}{k}\binom{7}{4-k}
+  \]
+
+  \[
+  \sum_{k\in\mathbb{Z}}\binom{12}{k}\binom{9}{10-k}
+  \]
+\end{enumerate}
+
+\end{document}
